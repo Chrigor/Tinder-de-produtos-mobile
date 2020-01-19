@@ -1,17 +1,20 @@
-import React, {useState} from 'react';
-import {View, Text, Button} from 'react-native';
+import React, { useState } from 'react';
+import { View, SafeAreaView, StyleSheet } from 'react-native';
+import Slider from './components/Slider'
 
-function main(){
+function main() {
 
-    const [texto, setTexto] = useState('');
-
-    return(
-        <View>
-            <Text> {texto} !</Text>
-            <Text>Hello world!</Text>
-            <Button onPress={() => { setTexto('Bem vindo!')}} title="Opa"/>
-        </View>
+    return (
+        <SafeAreaView style={styles.view}>
+            <Slider />
+        </SafeAreaView>  
     )
 }
+
+const styles = StyleSheet.create({
+    view: {
+        flex: 1
+    }
+}) 
 
 export default main;
