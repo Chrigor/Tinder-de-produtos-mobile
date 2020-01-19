@@ -1,20 +1,23 @@
 import React, { useState } from 'react';
-import { View, SafeAreaView, StyleSheet } from 'react-native';
+import {View, StyleSheet } from 'react-native';
 import Slider from './components/Slider'
 
 function main() {
 
     return (
-        <SafeAreaView style={styles.view}>
+        <View style={styles.view}>
             <Slider />
-        </SafeAreaView>  
+        </View> 
     )
-}
+} 
 
 const styles = StyleSheet.create({
     view: {
-        flex: 1
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor:"red"
     }
-}) 
+})
 
 export default main;

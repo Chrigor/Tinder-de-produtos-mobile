@@ -1,18 +1,28 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { View, Text, Dimensions, StyleSheet } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 
 
 function Slider() {
 
-    const data = [
+    const [data, setData] = useState([]);
+
+    const data1 = [
         {
             title: "1"
         },
         {
             title: "2"
+        }, 
+        {
+            title: "3"
         }
     ]
+
+    useEffect(() => {
+        setData(data1);
+    }, [])
+
 
     _renderItem = ({ item, index }) => {
         return (
@@ -22,10 +32,6 @@ function Slider() {
         );
     }
 
-    const dimension = Dimensions.get('screen');
-    const sliderWidth = dimension.width;
-    const itemWidth = sliderWidth / 2;
-
     return (
         <Carousel
             ref={(c) => { this._carousel = c; }}
@@ -33,13 +39,19 @@ function Slider() {
             renderItem={this._renderItem}
             sliderWidth={sliderWidth}
             itemWidth={itemWidth}
+            layout={'tinder'}
         />
     )
 }
 
+const dimension = Dimensions.get('screen');
+const sliderWidth = dimension.width;
+const itemWidth = sliderWidth / 2;
+const sliderHeight = dimension.height;
+
 const styles = StyleSheet.create({
     slide: {
-        flex: 1,
+        height: sliderHeight/2,
         backgroundColor: "blue",
         justifyContent: "center",
         alignItems:"center"
@@ -47,7 +59,6 @@ const styles = StyleSheet.create({
 
     title: {
         color: "#fff",
-
     }
 })
 
