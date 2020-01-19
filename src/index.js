@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {View, StyleSheet } from 'react-native';
 import Slider from './components/Slider';
 import Header from './components/HeaderBar';
+import ActionBar from './components/ActionBar';
 
 function main() {
 
@@ -9,6 +10,7 @@ function main() {
         <View style={styles.view}>
             <Header />
             <Slider />
+            <ActionBar />
         </View> 
     )
 } 
