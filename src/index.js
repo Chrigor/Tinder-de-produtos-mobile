@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import {View, StyleSheet } from 'react-native';
-import Slider from './components/Slider'
+import Slider from './components/Slider';
+import Header from './components/HeaderBar';
 
 function main() {
 
     return (
         <View style={styles.view}>
+            <Header />
             <Slider />
         </View> 
     )

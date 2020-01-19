@@ -46,11 +46,14 @@ function Slider() {
 
 const dimension = Dimensions.get('screen');
 const sliderWidth = dimension.width;
-const itemWidth = sliderWidth / 2;
+const itemWidth = sliderWidth/1.1;
 const sliderHeight = dimension.height;
 
 const styles = StyleSheet.create({
     slide: {
+        alignSelf:"center",
+        margin:5,
+        width:sliderWidth,
         height: sliderHeight/2,
         backgroundColor: "blue",
         justifyContent: "center",
