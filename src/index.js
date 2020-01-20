@@ -3,6 +3,7 @@ import {View, StyleSheet } from 'react-native';
 import Slider from './components/Slider';
 import Header from './components/HeaderBar';
 import ActionBar from './components/ActionBar';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 function main() {
 
@@ -11,6 +12,7 @@ function main() {
             <Header />
             <Slider />
             <ActionBar />
+            <Icon name="home" size={18} color="#999" />
         </View> 
     )
 } 

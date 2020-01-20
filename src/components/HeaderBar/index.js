@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     containerHeaderBar: {
         flexDirection:'row',
         height: heightHeaderBar,
-        width:"100%",
+        width:"100%", 
         backgroundColor:"purple",
         paddingBottom:10,
         justifyContent:"space-around",

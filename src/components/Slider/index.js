@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { View, Text, Dimensions, StyleSheet } from 'react-native';
+import { View, Text, Dimensions, StyleSheet, ImageBackground} from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 
 
@@ -9,7 +9,8 @@ function Slider() {
 
     const data1 = [
         {
-            title: "1"
+            title: "1",
+            backgroudImage: {uri:'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'},
         },
         {
             title: "2"
@@ -54,10 +55,11 @@ const styles = StyleSheet.create({
         alignSelf:"center",
         margin:5,
         width:sliderWidth,
-        height: sliderHeight/2,
+        height: sliderHeight/1.5,
         backgroundColor: "blue",
         justifyContent: "center",
-        alignItems:"center"
+        alignItems:"center",
+
     },
 
     title: {
