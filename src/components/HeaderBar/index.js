@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {View, StyleSheet, Dimensions, Text } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 function HeaderBar(){
     return(
