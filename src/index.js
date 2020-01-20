@@ -10,7 +10,7 @@ function main() {
         <View style={styles.view}>
             <Header />
             <Slider />
-            <ActionBar/>
+            <ActionBar />
         </View> 
     )
 } 

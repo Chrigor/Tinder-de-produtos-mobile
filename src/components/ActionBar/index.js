@@ -1,12 +1,13 @@
 import React from 'react';
 import { View, Text, Dimensions, StyleSheet } from 'react-native';
+import Button from '../Button';
 
 function ActionBar() {
     return (
         <View style={styles.containerHeaderBar}>
-            <Text>1</Text>
-            <Text>2</Text>
-            <Text>3</Text>
+             <Button size={25} color="#fff" name="times"/>
+             <Button size={25} color="#fff" name="star"/>
+             <Button size={25} color="#fff" name="heart"/>
         </View>
     )
 }
@@ -20,10 +21,9 @@ const styles = StyleSheet.create({
         height: heightActionBar,
         width:"100%",
         backgroundColor:"purple",
-        paddingBottom:10,
         justifyContent:"space-around",
         alignItems:"center",
-        marginVertical:5,
+        marginBottom:5,
     }
 })
 

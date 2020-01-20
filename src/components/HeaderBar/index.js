@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import {View, StyleSheet, Dimensions, Text } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Button from '../Button';
 
 function HeaderBar(){
     return(
         <View style={styles.containerHeaderBar}>
-            <Text>1</Text>
-            <Text>2</Text>
-            <Text>3</Text>
+            <Button size={25} color="#fff" name="user"/>
+            <Button size={25} color="#fff" name="tint"/>
+            <Button size={25} color="#fff" name="comments"/>        
         </View>
     )
 }
@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
         height: heightHeaderBar,
         width:"100%", 
         backgroundColor:"purple",
-        paddingBottom:10,
         justifyContent:"space-around",
         alignItems:"center"
     }

@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
-import {View, StyleSheet } from 'react-native';
+import {TouchableHighlight, Alert } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-function Button(){
+function Button({ size, color, name }) {
+
+
     return (
-        <Text>Ola</Text>
-    ) 
+       <TouchableHighlight onPress={() => Alert.alert("Oi")}>
+           <Icon name={name} size={size} color={color}/>
+       </TouchableHighlight>
+    )
 }
 
 export default Button; 
