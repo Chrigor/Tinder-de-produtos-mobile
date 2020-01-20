@@ -30,10 +30,14 @@ function Slider() {
     _renderItem = ({ item, index }) => {
         return (
             // <View style={styles.slide}>
-                <ImageBackground source={item.backgroudImage} style={styles.slide}>
-                    <Text style={styles.title}>{item.title}</Text>
-                    <Text>asiddashusdauhsdauhsda </Text>
-                </ImageBackground>
+            <ImageBackground source={item.backgroudImage} style={styles.slide}>
+
+                <Text style={styles.title}>{item.title}</Text>
+                <Text style={styles.title}>Price 5$</Text>
+                <Text style={styles.title}>Martelo grandao</Text>
+                <Text></Text>
+
+            </ImageBackground>
             // </View>
         );
     }
@@ -58,12 +62,12 @@ const sliderHeight = dimension.height;
 const styles = StyleSheet.create({
     slide: {
         alignSelf: "center",
-        margin: 5,
-        width: sliderWidth,
-        height: sliderHeight / 1.5,
-        backgroundColor: "blue",
-        justifyContent: "center",
-        alignItems: "center",
+        width: "100%",
+        height: "100%",
+        justifyContent: "flex-end",
+        alignItems: "flex-start",
+        margin:5,
+        padding:5,
     },
 
     title: {
