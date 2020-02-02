@@ -5,9 +5,9 @@ import Button from '../Button';
 function ActionBar() {
     return (
         <View style={styles.containerHeaderBar}>
-             <Button size={25} color="#fff" name="times"/>
-             <Button size={25} color="#fff" name="star"/>
-             <Button size={25} color="#fff" name="heart"/>
+             <Button size={25} color="red" name="times" backgroundColorProps="#fff"/>
+             <Button size={25} color="blue" name="star"/>
+             <Button size={25} color="yellowgreen" name="heart"/>
         </View>
     )
 }

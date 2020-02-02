@@ -10,7 +10,7 @@ function main() {
         <View style={styles.view}>
             <Header />
             <Slider />
-            <ActionBar />
+            <ActionBar/>
         </View>
     )
 }
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "red"
+        backgroundColor: "transparent"
     }
 })
 

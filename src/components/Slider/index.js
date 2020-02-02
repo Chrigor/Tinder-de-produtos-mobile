@@ -1,57 +1,50 @@
-import React, { useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import { View, Text, Dimensions, StyleSheet, ImageBackground } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import api from '../../services/api';
 
+export default class Slider extends Component {
 
-function Slider() {
+    state = {
+        data: []
+    }
 
-    const [data, setData] = useState([]);
+    componentWillMount() {
+        this.getItens();
+    };
 
-    const dataCorrect = [
-        {
-            title: "1",
-            backgroudImage: { uri: 'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80' },
-            price:"5",
-            description:"homem viajante da disney"
-        },
-        {
-            title: "2",
-            backgroudImage: { uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSTl1UdulPMtbyxdp-edAAWVhHV2z0_LqNvnLHE5Y3fTKvHC2W&s' },
-            price:"10",
-            description:"brabuletas azuis"
-        },
-        {
-            title: "3",
-            backgroudImage: { uri: 'https://interactive-examples.mdn.mozilla.net/media/examples/grapefruit-slice-332-332.jpg' },
-            price:"2",
-            description:"laranjao monster"
-        }
-    ]
-
-    useEffect(() => {
-        setData(dataCorrect);
-    }, [])
+    getItens = async () => {
+      const response = await api.get("/products");
+      const itens = response.data;
+      console.log("ITEM");
+      console.log(itens);
+      this.setState({data: itens});
+    }
 
 
     _renderItem = ({ item, index }) => {
-        return (
+
+        console.log("Item");
+        console.log(item);
+
+        return ( 
             // <View style={styles.slide}>
-            <ImageBackground source={item.backgroudImage} style={styles.slide}>
+            <ImageBackground source={{uri: item.imagem}} style={styles.slide}>
 
                 <Text style={styles.title}>
-                    <Icon name="bullseye" size={20}/>
-                    {item.title}
+                    <Icon name="bullseye" size={20} />
+                    {item.name}
                 </Text>
 
                 <Text style={styles.title}>
-                    <Icon name="tags" size={20}/>
+                    <Icon name="tags" size={20} iconStyle={{ marginRight: 10 }} />
                     Price {item.price}$
                 </Text>
 
                 <Text style={styles.title}>
-                <Icon name="text-width" size={20}/>
-                   {item.description}
+                    <Icon name="text-width" size={20} />
+                    {item.description}
                 </Text>
 
                 <Text></Text>
@@ -61,16 +54,18 @@ function Slider() {
         );
     }
 
-    return (
-        <Carousel
-            ref={(c) => { this._carousel = c; }}
-            data={data}
-            renderItem={this._renderItem}
-            sliderWidth={sliderWidth}
-            itemWidth={itemWidth}
-            layout={'tinder'}
-        />
-    )
+    render() {
+        return (
+            <Carousel
+                ref={(c) => { this._carousel = c; }}
+                data={this.state.data}
+                renderItem={this._renderItem}
+                sliderWidth={sliderWidth}
+                itemWidth={itemWidth}
+                layout={'tinder'}
+            />
+        )
+    }
 }
 
 const dimension = Dimensions.get('screen');
@@ -85,8 +80,9 @@ const styles = StyleSheet.create({
         height: "100%",
         justifyContent: "flex-end",
         alignItems: "flex-start",
-        margin:5,
-        padding:5,
+        margin: 5,
+        padding: 5,
+        borderRadius: 20,
     },
 
     title: {
@@ -95,4 +91,3 @@ const styles = StyleSheet.create({
 
 })
 
-export default Slider;
